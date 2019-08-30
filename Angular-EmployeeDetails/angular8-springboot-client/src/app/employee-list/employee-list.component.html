@@ -1,0 +1,33 @@
+<div class="panel panel-defaul">
+    <div class="panel-heading">
+       <h1 style="color: maroon">Employee</h1>
+       <h2 [textContent]="title"></h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered" style="background-color:lightsalmon;">
+         <thead>
+             <tr style="background-color:gray">
+                 <th>S.No</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let employe of employees ;index as i">
+                 <td>[{{i+1}}]</td>
+                 <td>{{employe.firstName}}</td>
+                 <td>{{employe.lastName}}</td>
+                 <td>{{employe.emailId}}</td>
+                 <td><button class ="btn btn-secondary ml-3" (click)="deleteEmployee(employe.id)">Delete</button>
+                    <!--<a [routerLink]="['update/:id', employe.id]">-->
+                    <button  class ="btn btn-secondary ml-3" (click)="updateEmployee(employe.id)">Update</button>
+                </td>
+             </tr>
+         </tbody>
+        </table>
+
+    </div>
+
+</div>
